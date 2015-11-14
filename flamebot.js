@@ -48,23 +48,10 @@ function pugReset(){
 	grey = [];
 	red = [];
 	blu = [];
+	turnCount = 0;
 	pugActive = false;
 	pickingPhase = false;
-	players.push(new Player('PapaSmurf123', '123'));
-	players.push(new Player('dem', '111'));
-	players.push(new Player('kappa', '223'));
-	players.push(new Player('Purtle', '224'));
-	players.push(new Player('Amanda', '145'));
-	players.push(new Player('Timmy', '122'));
-	players.push(new Player('LucasTheIdiot', '666'));
-	players.push(new Player('Meepo', '126'));
-	players.push(new Player('Antimage', '333'));
-	players.push(new Player('Lion', '345'));
-	
-	for(var wtf = 0; wtf < players.length; wtf++){
-		grey.push(players[wtf]);
-	}
-	
+	locked = false;	
 	admins = [];
 	admins[0] = new Admin('flame', '108293726064910336');
 }
@@ -257,7 +244,6 @@ function addToColor(color, player){
 
 function removeFromColor(color, player){
 	if(color === 'GREY'){
-		console.log('Removing player ' + player.name +': ' + player.userid + ' from Grey');
 		var greyIndex = getGreyIndex(player.userid);
 		grey.splice(greyIndex,1);
 		bot.removeFromRole({
@@ -265,10 +251,10 @@ function removeFromColor(color, player){
 		    user: player.userid,
 		    role: greyRoleId
 		});
+		sleep(500);
 		console.log(player.name + ' removed from Grey');
 	}
 	else if(color === 'RED'){
-		console.log('Removing player ' + player.name +': ' + player.userid + ' from Red');
 		var redIndex = getRedIndex(player.userid);
 		red.splice(redIndex,1);
 		bot.removeFromRole({
@@ -276,10 +262,10 @@ function removeFromColor(color, player){
 		    user: player.userid,
 		    role: redRoleId
 		});
+		sleep(500);
 		console.log(player.name + ' removed from Red');
 	}
 	else if(color === 'BLU'){
-		console.log('Removing player ' + player.name +': ' + player.userid + ' from Blu');
 		var bluIndex = getBluIndex(player.userid);
 		blu.splice(bluIndex,1);
 		bot.removeFromRole({
@@ -287,6 +273,7 @@ function removeFromColor(color, player){
 		    user: player.userid,
 		    role: bluRoleId
 		});
+		sleep(500);
 		console.log(player.name + ' removed from Blu');
 	}
 	
@@ -571,8 +558,11 @@ bot.on("message", function(user, userID, channelID, message, rawEvent) {
 				//}
 			}
 		}
-		else if(msg.clear){
-			clearColors();
+		else if(msg.clear && admins.length > 0){
+			if(userID === admins[0].userid){
+				clearColors();
+				say('Clearing Colors');
+			}
 		}
 		else if(msg.colors){
 			updateColors();
@@ -609,7 +599,7 @@ bot.on("presence", function(user, userID, status, rawEvent) {
 });
 
 bot.on("debug", function(rawEvent) {
-	console.log(rawEvent) //Logs every event
+	//console.log(rawEvent); //Logs every event
 });
 
 bot.on("disconnected", function() {
