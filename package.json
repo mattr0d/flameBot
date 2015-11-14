@@ -1,14 +1,14 @@
 {
-  "name": "flamebot",
+  "name": "flamebot.io",
   "version": "1.0.0",
   "description": "FlameBot for Discord",
   "main": "./lib/index.js",
   "scripts": {
-	"start": "node flamebot.js"
+	"start": "node flamebot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
+    "type": "git"
   },
   "keywords": [
     "Discord",
@@ -22,6 +22,7 @@
   "bugs": {
     "url": ""
   },
+  "homepage": "https://github.com/izy521/discord.io#readme",
   "dependencies": {
     "request": "^2.61.0",
     "ws": "^0.8.0"
@@ -30,6 +31,6 @@
     "lame": "^1.2.0",
     "node-opus": "^0.1.0",
 	"wav": "^1.0.0"
-  }
+  },
   "main":"flamebot.js"
 }
