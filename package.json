@@ -7,8 +7,9 @@
   "scripts": {
 	"start": "node flamebot.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+	"debug": "node debug flamebot.js",
 	"monitor": "nodemon flamebot.js",
-    "deploy": "gcloud preview app deploy app.yaml",
+    "deploy": "gcloud preview app deploy app.yaml --promote --flame-1130",
     "lint": "jshint --exclude-path=.gitignore .",
     "test": "npm run lint"
   },
