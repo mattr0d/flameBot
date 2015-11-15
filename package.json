@@ -13,9 +13,6 @@
     "lint": "jshint --exclude-path=.gitignore .",
     "test": "npm run lint"
   },
-  "repository": {
-    "type": "git"
-  },
   "keywords": [
     "Discord",
     "Discordapp",
@@ -25,10 +22,6 @@
   ],
   "author": "flame",
   "license": "MIT",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "https://github.com/izy521/discord.io#readme",
   "dependencies": {
     "request": "^2.61.0",
     "ws": "^0.8.0"
@@ -39,7 +32,7 @@
 	"wav": "^1.0.0"
   },
   "engines": {
-    "node": ">=0.12.7"
+    "node": ">=4.2.2"
   },
   "main":"flamebot.js"
 }
