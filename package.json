@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
 	"debug": "node debug flamebot.js",
 	"monitor": "nodemon flamebot.js",
-    "deploy": "gcloud preview app deploy app.yaml -- version 100 --promote --project flame-1130",
+    "deploy": "gcloud preview app deploy app.yaml --version 100 --promote --project flame-1130",
     "lint": "jshint --exclude-path=.gitignore .",
     "test": "npm run lint"
   },
