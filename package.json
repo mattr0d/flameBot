@@ -1,11 +1,16 @@
 {
-  "name": "flamebot.io",
+  "name": "flamebot",
   "version": "1.0.0",
   "description": "FlameBot for Discord",
+  "repository": "https://github.com/mattr0d/flamebot",
   "main": "./lib/index.js",
   "scripts": {
 	"start": "node flamebot.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"monitor": "nodemon flamebot.js",
+    "deploy": "gcloud preview app deploy app.yaml",
+    "lint": "jshint --exclude-path=.gitignore .",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git"
@@ -31,6 +36,9 @@
     "lame": "^1.2.0",
     "node-opus": "^0.1.0",
 	"wav": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=0.12.7"
   },
   "main":"flamebot.js"
 }
