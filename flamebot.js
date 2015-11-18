@@ -279,6 +279,12 @@ function removeFromColor(color, player){
 	
 }
 
+function removeFromGrey(player){
+	sleep(500);
+	removeFromColor('GREY',player);
+	var gIndex = getGreyIndex(player.userid);
+}
+
 function addToGrey(player){
 	grey.push(players[getPlayerIndex(player.userid)]);
 }
@@ -297,11 +303,7 @@ function addToRed(player){
 	removeFromGrey(player);
 }
 
-function removeFromGrey(player){
-	sleep(500);
-	removeFromColor('GREY',player);
-	var gIndex = getGreyIndex(player.userid);
-}
+
 
 function swapTurn(player, turnCounter, pickedPlayer){
 	var capOneIndex = getPlayerIndex(captains[0].userid);
@@ -323,9 +325,32 @@ function swapTurn(player, turnCounter, pickedPlayer){
 		pickingPhase = false;
 		locked = true;
 		var whosePug = getAdminStarted();
+		var redString = '';
+		var bluString = '';
 		say('Pug is starting. Please move to the correct voice channel.' + whosePug + ' is responsible for creating the lobby');
+		for(var rcount = 0; rcount < red.length; rcount++){
+			if(rcount != red.length-1){
+				redString += red[rcount].name + ', ';
+			}
+			else{
+				redString += red[rcount].name;
+			}
+		}
+		for(var bcount = 0; count < blu.length; bcount++){
+			if(bcount != blu.length-1){
+				bluString += blu[bcount].name + ', ';
+			}
+			else{
+				bluString += blu[bcount].name;
+			}
+		}
+		
+		say('Teams are - Red: ' + redString + ' Blue: ' + bluString);
 		sleep(500);
 		updateColors();
+		sleep(10000);
+		pugRest();
+		say('Type !start to start a new pug.');
 	}
 
 }
