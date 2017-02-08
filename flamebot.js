@@ -138,8 +138,8 @@ function clearColors(){
 	for(var r = 0; r < red.length; r++){
 		clearList.push({
 			server: channelId,
-			role: redRoleId
 			user: red[r].userid,
+			role: redRoleId
 		});
 	}
 	for(var b = 0; b < blu.length; b++){
