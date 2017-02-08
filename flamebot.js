@@ -1,16 +1,13 @@
 /*Variable area*/
 var Discordbot = require('discord.io');
-var email = 'flame.mattr0d@gmail.com';
-var password = 'flamebotkappa123';
+
 var channelId = '112968553669378048';
 var greyRoleId = '114190868503724038';
 var redRoleId = '114203448404213767';
 var bluRoleId = '114203612284059654';
 
 var bot = new Discord.Client({
-	token = "flame",
-	email: email,
-	password: password,
+	token = "Mjc4OTE4NDQyMTA1NDM4MjA4.C3zSpg.E8AnWmLJi07N0tTLqQOyr53ta4M",
 	autorun: true
 });
 
