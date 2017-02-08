@@ -335,7 +335,7 @@ function swapTurn(player, turnCounter, pickedPlayer){
 				redString += red[rcount].name;
 			}
 		}
-		for(var bcount = 0; count < blu.length; bcount++){
+		for(var bcount = 0; bcount < blu.length; bcount++){
 			if(bcount != blu.length-1){
 				bluString += blu[bcount].name + ', ';
 			}
