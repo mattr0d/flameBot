@@ -7,7 +7,7 @@ var redRoleId = '114203448404213767';
 var bluRoleId = '114203612284059654';
 
 var bot = new Discord.Client({
-	token = "Mjc4OTE4NDQyMTA1NDM4MjA4.C3zSpg.E8AnWmLJi07N0tTLqQOyr53ta4M",
+	token: "Mjc4OTE4NDQyMTA1NDM4MjA4.C3zSpg.E8AnWmLJi07N0tTLqQOyr53ta4M",
 	autorun: true
 });
 
@@ -17,8 +17,8 @@ bot.on("err", function(error) {
 });
 
 bot.on("ready", function(rawEvent) {
-	console.log("Connected!");
 	console.log("Logged in as: ");
+	console.log("Connected!");
 	console.log(bot.username + " - (" + bot.id + ")");
 	say('I have joined the channel. To start a pug, type !start');
 });
