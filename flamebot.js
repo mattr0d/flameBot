@@ -1,7 +1,7 @@
 /*Variable area*/
 var Discord = require('discord.io');
 
-var channelId = '112968553669378048';
+var channelId = '278906418546081802';
 var greyRoleId = '114190868503724038';
 var redRoleId = '114203448404213767';
 var bluRoleId = '114203612284059654';
@@ -17,8 +17,8 @@ bot.on("err", function(error) {
 });
 
 bot.on("ready", function(rawEvent) {
-	console.log("Logged in as: ");
 	console.log("Connected!");
+	console.log("Logged in as: ");
 	console.log(bot.username + " - (" + bot.id + ")");
 	say('I have joined the channel. To start a pug, type !start');
 });
