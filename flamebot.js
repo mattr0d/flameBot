@@ -1,5 +1,5 @@
 /*Variable area*/
-var Discordbot = require('discord.io');
+var Discord = require('discord.io');
 
 var channelId = '112968553669378048';
 var greyRoleId = '114190868503724038';
