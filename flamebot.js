@@ -348,7 +348,7 @@ function swapTurn(player, turnCounter, pickedPlayer){
 		sleep(500);
 		updateColors();
 		sleep(10000);
-		pugRest();
+		pugReset();
 		say('Type !start to start a new pug.');
 	}
 
