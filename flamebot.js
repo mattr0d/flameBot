@@ -2,9 +2,9 @@
 var Discord = require('discord.io');
 
 var channelId = '278906418546081802';
-var greyRoleId = '114190868503724038';
-var redRoleId = '114203448404213767';
-var bluRoleId = '114203612284059654';
+var greyRoleId = '278923104682508289';
+var redRoleId = '278923213365575680';
+var bluRoleId = '278923346777735169';
 
 var bot = new Discord.Client({
 	token: "Mjc4OTE4NDQyMTA1NDM4MjA4.C3zSpg.E8AnWmLJi07N0tTLqQOyr53ta4M",
@@ -138,8 +138,8 @@ function clearColors(){
 	for(var r = 0; r < red.length; r++){
 		clearList.push({
 			server: channelId,
-			user: red[r].userid,
 			role: redRoleId
+			user: red[r].userid,
 		});
 	}
 	for(var b = 0; b < blu.length; b++){
