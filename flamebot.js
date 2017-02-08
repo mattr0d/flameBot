@@ -131,23 +131,23 @@ function clearColors(){
 	var clearList = [];
 	for(var g = 0; g < grey.length; g++){
 		clearList.push({
-			"serverID":serverId,
-			"userID": grey[g].userid,
-			"roleID": greyRoleId
+			server: serverId,
+			user: grey[g].userid,
+			role: greyRoleId
 		});
 	}
 	for(var r = 0; r < red.length; r++){
 		clearList.push({
-			"serverID":serverId,
-			"userID": red[r].userid,
-			"roleID": redRoleId
+			server: serverId,
+			user: red[r].userid,
+			role: redRoleId
 		});
 	}
 	for(var b = 0; b < blu.length; b++){
 		clearList.push({
-			"serverID":serverId,
-			"userID": blu[b].userid,
-			"roleID": bluRoleId
+			server: serverId,
+			user: blu[b].userid,
+			role: bluRoleId
 		});
 	}
 	for(var cl = 0; cl < clearList.length; cl++){
@@ -163,40 +163,40 @@ function updateColors(){
 	for(var g = 0; g < grey.length; g++){
 		if(getRedIndex(grey[g].userid) > -1){
 			removePlayers.push({
-				"serverID":serverId,
-				"userID": grey[g].userid,
-				"roleID": greyRoleId
+				server: serverId,
+				user: grey[g].userid,
+				role: greyRoleId
 			});
 		}
 		else if(getBluIndex(grey[g].userid) > -1){
 			removePlayers.push({
-				"serverID":serverId,
-				"userID": grey[g].userid,
-				"roleID": greyRoleId
+				server: serverId,
+				user: grey[g].userid,
+				role: greyRoleId
 			});
 		}
 		else{	
 			addPlayers.push({
-				"serverID":serverId,
-				"userID": grey[g].userid,
-				"roleID": greyRoleId
+				server: serverId,
+				user: grey[g].userid,
+				role: greyRoleId
 			});
 		}
 	}
 	for(var r = 0; r < red.length; r++){
 		console.log('MAKING RED: ' + r + ' ' + red[r].name );
 		addPlayers.push({
-			"serverID":serverId,
-			"userID": red[r].userid,
-			"roleID": redRoleId
+			server: serverId,
+			user: red[r].userid,
+			role: redRoleId
 		});
 	}
 	for(var b = 0; b < blu.length; b++){
 		console.log('MAKING BLU: ' + b + ' ' + blu[b].name );
 		addPlayers.push({
 			"serverID":serverId,
-			"userID": blu[b].userid,
-			"roleID": bluRoleId
+			user: blu[b].userid,
+			role: bluRoleId
 		});
 	}
 	for(var kappa = 0; kappa < addPlayers.length; kappa++){
@@ -213,7 +213,7 @@ function addToColor(color, player){
 		console.log('Adding player ' + player.name +': ' + player.userid + ' to Grey');
 		//grey.push(player);
 		bot.addToRole({
-		    "serverID":serverId,
+		    "serverID": serverId,
 		    "userID": userId,
 		    "roleID": greyRoleId
 		});
@@ -223,7 +223,7 @@ function addToColor(color, player){
 		console.log('Adding player ' + player.name +': ' + player.userid + ' to Red');
 		red.push(player);
 		bot.addToRole({
-		    "serverID":serverId,
+		    "serverID": serverId,
 		    "userID": userId,
 		    "roleID": redRoleId
 		});
@@ -233,7 +233,7 @@ function addToColor(color, player){
 		console.log('Adding player ' + player.name +': ' + player.userid + ' to Blu');
 		blu.push(player);
 		bot.addToRole({
-		    "serverID":serverId,
+		    "serverID": serverId,
 		    "userID": userId,
 		    "roleID": bluRoleId
 		});	
@@ -246,7 +246,7 @@ function removeFromColor(color, player){
 		var greyIndex = getGreyIndex(player.userid);
 		grey.splice(greyIndex,1);
 		bot.removeFromRole({
-		    "serverID":serverId,
+		    "serverID": serverId,
 		    "userID": player.userid,
 		    "roleID": greyRoleId
 		});
@@ -257,7 +257,7 @@ function removeFromColor(color, player){
 		var redIndex = getRedIndex(player.userid);
 		red.splice(redIndex,1);
 		bot.removeFromRole({
-		    "serverID":serverId,
+		    "serverID": serverId,
 		    "userID": player.userid,
 		    "roleID": redRoleId
 		});
@@ -268,7 +268,7 @@ function removeFromColor(color, player){
 		var bluIndex = getBluIndex(player.userid);
 		blu.splice(bluIndex,1);
 		bot.removeFromRole({
-		    "serverID":serverId,
+		    "serverID": serverId,
 		    "userID": player.userid,
 		    "roleID": bluRoleId
 		});
