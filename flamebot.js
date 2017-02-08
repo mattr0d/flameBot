@@ -131,23 +131,23 @@ function clearColors(){
 	var clearList = [];
 	for(var g = 0; g < grey.length; g++){
 		clearList.push({
-			server: serverId,
-			user: grey[g].userid,
-			role: greyRoleId
+			serverID serverId,
+			userID: grey[g].userid,
+			roleID: greyRoleId
 		});
 	}
 	for(var r = 0; r < red.length; r++){
 		clearList.push({
-			server: serverId,
-			user: red[r].userid,
-			role: redRoleId
+			serverID serverId,
+			userID: red[r].userid,
+			roleID: redRoleId
 		});
 	}
 	for(var b = 0; b < blu.length; b++){
 		clearList.push({
-			server: serverId,
-			user: blu[b].userid,
-			role: bluRoleId
+			serverID serverId,
+			userID: blu[b].userid,
+			roleID: bluRoleId
 		});
 	}
 	for(var cl = 0; cl < clearList.length; cl++){
@@ -163,40 +163,40 @@ function updateColors(){
 	for(var g = 0; g < grey.length; g++){
 		if(getRedIndex(grey[g].userid) > -1){
 			removePlayers.push({
-				server: serverId,
-				user: grey[g].userid,
-				role: greyRoleId
+				serverID serverId,
+				userID: grey[g].userid,
+				roleID: greyRoleId
 			});
 		}
 		else if(getBluIndex(grey[g].userid) > -1){
 			removePlayers.push({
-				server: serverId,
-				user: grey[g].userid,
-				role: greyRoleId
+				serverID serverId,
+				userID: grey[g].userid,
+				roleID: greyRoleId
 			});
 		}
 		else{	
 			addPlayers.push({
-				server: serverId,
-				user: grey[g].userid,
-				role: greyRoleId
+				serverID serverId,
+				userID: grey[g].userid,
+				roleID: greyRoleId
 			});
 		}
 	}
 	for(var r = 0; r < red.length; r++){
 		console.log('MAKING RED: ' + r + ' ' + red[r].name );
 		addPlayers.push({
-			server: serverId,
-			user: red[r].userid,
-			role: redRoleId
+			serverID serverId,
+			userID: red[r].userid,
+			roleID: redRoleId
 		});
 	}
 	for(var b = 0; b < blu.length; b++){
 		console.log('MAKING BLU: ' + b + ' ' + blu[b].name );
 		addPlayers.push({
-			"serverID":serverId,
-			user: blu[b].userid,
-			role: bluRoleId
+			serverID serverId,
+			userID: blu[b].userid,
+			roleID: bluRoleId
 		});
 	}
 	for(var kappa = 0; kappa < addPlayers.length; kappa++){
@@ -213,9 +213,9 @@ function addToColor(color, player){
 		console.log('Adding player ' + player.name +': ' + player.userid + ' to Grey');
 		//grey.push(player);
 		bot.addToRole({
-		    "serverID": serverId,
-		    "userID": userId,
-		    "roleID": greyRoleId
+		    serverID serverId,
+		    userID: userId,
+		    roleID: greyRoleId
 		});
 		console.log(grey[getGreyIndex(player.userid)].name + ' added to Grey');
 	}
@@ -223,9 +223,9 @@ function addToColor(color, player){
 		console.log('Adding player ' + player.name +': ' + player.userid + ' to Red');
 		red.push(player);
 		bot.addToRole({
-		    "serverID": serverId,
-		    "userID": userId,
-		    "roleID": redRoleId
+		    serverID serverId,
+		    userID: userId,
+		    roleID: redRoleId
 		});
 		console.log(red[getRedIndex(player.userid)].name + ' added to Red');
 	}
@@ -233,9 +233,9 @@ function addToColor(color, player){
 		console.log('Adding player ' + player.name +': ' + player.userid + ' to Blu');
 		blu.push(player);
 		bot.addToRole({
-		    "serverID": serverId,
-		    "userID": userId,
-		    "roleID": bluRoleId
+		    serverID serverId,
+		    userID: userId,
+		    roleID: bluRoleId
 		});	
 		console.log(blu[getBluIndex(player.userid)].name + ' added to Blu');
 	}
@@ -246,9 +246,9 @@ function removeFromColor(color, player){
 		var greyIndex = getGreyIndex(player.userid);
 		grey.splice(greyIndex,1);
 		bot.removeFromRole({
-		    "serverID": serverId,
-		    "userID": player.userid,
-		    "roleID": greyRoleId
+		    serverID serverId,
+		    userID: player.userid,
+		    roleID: greyRoleId
 		});
 		sleep(500);
 		console.log(player.name + ' removed from Grey');
@@ -257,9 +257,9 @@ function removeFromColor(color, player){
 		var redIndex = getRedIndex(player.userid);
 		red.splice(redIndex,1);
 		bot.removeFromRole({
-		    "serverID": serverId,
-		    "userID": player.userid,
-		    "roleID": redRoleId
+		    serverID serverId,
+		    userID: player.userid,
+		    roleID: redRoleId
 		});
 		sleep(500);
 		console.log(player.name + ' removed from Red');
@@ -268,9 +268,9 @@ function removeFromColor(color, player){
 		var bluIndex = getBluIndex(player.userid);
 		blu.splice(bluIndex,1);
 		bot.removeFromRole({
-		    "serverID": serverId,
-		    "userID": player.userid,
-		    "roleID": bluRoleId
+		    serverID serverId,
+		    userID: player.userid,
+		    roleID: bluRoleId
 		});
 		sleep(500);
 		console.log(player.name + ' removed from Blu');
