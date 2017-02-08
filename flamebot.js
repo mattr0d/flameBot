@@ -1,6 +1,7 @@
 /*Variable area*/
 var Discord = require('discord.io');
 
+var serverId = '112968553669378048'
 var channelId = '278906418546081802';
 var greyRoleId = '278923104682508289';
 var redRoleId = '278923213365575680';
@@ -130,21 +131,21 @@ function clearColors(){
 	var clearList = [];
 	for(var g = 0; g < grey.length; g++){
 		clearList.push({
-			server: channelId,
+			server: serverId,
 			user: grey[g].userid,
 			role: greyRoleId
 		});
 	}
 	for(var r = 0; r < red.length; r++){
 		clearList.push({
-			server: channelId,
+			server: serverId,
 			user: red[r].userid,
 			role: redRoleId
 		});
 	}
 	for(var b = 0; b < blu.length; b++){
 		clearList.push({
-			server: channelId,
+			server: serverId,
 			user: blu[b].userid,
 			role: bluRoleId
 		});
@@ -162,21 +163,21 @@ function updateColors(){
 	for(var g = 0; g < grey.length; g++){
 		if(getRedIndex(grey[g].userid) > -1){
 			removePlayers.push({
-				server: channelId,
+				server: serverId,
 				user: grey[g].userid,
 				role: greyRoleId
 			});
 		}
 		else if(getBluIndex(grey[g].userid) > -1){
 			removePlayers.push({
-				server: channelId,
+				server: serverId,
 				user: grey[g].userid,
 				role: greyRoleId
 			});
 		}
 		else{	
 			addPlayers.push({
-				server: channelId,
+				server: serverId,
 				user: grey[g].userid,
 				role: greyRoleId
 			});
@@ -185,7 +186,7 @@ function updateColors(){
 	for(var r = 0; r < red.length; r++){
 		console.log('MAKING RED: ' + r + ' ' + red[r].name );
 		addPlayers.push({
-			server: channelId,
+			server: serverId,
 			user: red[r].userid,
 			role: redRoleId
 		});
@@ -193,7 +194,7 @@ function updateColors(){
 	for(var b = 0; b < blu.length; b++){
 		console.log('MAKING BLU: ' + b + ' ' + blu[b].name );
 		addPlayers.push({
-			server: channelId,
+			server: serverId,
 			user: blu[b].userid,
 			role: bluRoleId
 		});
@@ -212,7 +213,7 @@ function addToColor(color, player){
 		console.log('Adding player ' + player.name +': ' + player.userid + ' to Grey');
 		//grey.push(player);
 		bot.addToRole({
-		    server: channelId,
+		    server: serverId,
 		    user: userId,
 		    role: greyRoleId
 		});
@@ -222,7 +223,7 @@ function addToColor(color, player){
 		console.log('Adding player ' + player.name +': ' + player.userid + ' to Red');
 		red.push(player);
 		bot.addToRole({
-		    server: channelId,
+		    server: serverId,
 		    user: userId,
 		    role: redRoleId
 		});
@@ -232,7 +233,7 @@ function addToColor(color, player){
 		console.log('Adding player ' + player.name +': ' + player.userid + ' to Blu');
 		blu.push(player);
 		bot.addToRole({
-		    server: channelId,
+		    server: serverId,
 		    user: userId,
 		    role: bluRoleId
 		});	
@@ -245,7 +246,7 @@ function removeFromColor(color, player){
 		var greyIndex = getGreyIndex(player.userid);
 		grey.splice(greyIndex,1);
 		bot.removeFromRole({
-		    server: channelId,
+		    server: serverId,
 		    user: player.userid,
 		    role: greyRoleId
 		});
@@ -256,7 +257,7 @@ function removeFromColor(color, player){
 		var redIndex = getRedIndex(player.userid);
 		red.splice(redIndex,1);
 		bot.removeFromRole({
-		    server: channelId,
+		    server: serverId,
 		    user: player.userid,
 		    role: redRoleId
 		});
@@ -267,7 +268,7 @@ function removeFromColor(color, player){
 		var bluIndex = getBluIndex(player.userid);
 		blu.splice(bluIndex,1);
 		bot.removeFromRole({
-		    server: channelId,
+		    server: serverId,
 		    user: player.userid,
 		    role: bluRoleId
 		});
