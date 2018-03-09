@@ -8,7 +8,6 @@ var redRoleId = '278923213365575680';
 var bluRoleId = '278923346777735169';
 
 var bot = new Discord.Client({
-	token: "Mjc4OTE4NDQyMTA1NDM4MjA4.C3zSpg.E8AnWmLJi07N0tTLqQOyr53ta4M",
 	autorun: true
 });
 
